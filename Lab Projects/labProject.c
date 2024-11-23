@@ -1,6 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
 
 // Function that by Computer chooses to play
 int findChoice(int cell1, int cell2, int cell3, int cell4, int cell5, int cell6, int cell7, int cell8, int cell9)
@@ -145,6 +143,227 @@ void printingInterface(char cell1, char cell2, char cell3, char cell4, char cell
     printf("\n\n");
 }
 
+void givingChoice(char option, int choice, char *cell1, char *cell2, char *cell3, char *cell4, char *cell5, char *cell6, char *cell7, char *cell8, char *cell9, int *i)
+{
+    if (choice == 1)
+    {
+        if (*cell1 == ' ')
+        {
+            *cell1 = option;
+        }
+        else
+        {
+            printf("\nInvalid Input, Try again mate!\n");
+            *i -= 1;
+        }
+    }
+    else if (choice == 2)
+    {
+        if (*cell2 == ' ')
+        {
+            *cell2 = option;
+        }
+        else
+        {
+            printf("\nInvalid Input, Try again mate!\n");
+            *i -= 1;
+        }
+    }
+    else if (choice == 3)
+    {
+        if (*cell3 == ' ')
+        {
+            *cell3 = option;
+        }
+        else
+        {
+            printf("\nInvalid Input, Try again mate!\n");
+            *i -= 1;
+        }
+    }
+    else if (choice == 4)
+    {
+        if (*cell4 == ' ')
+        {
+            *cell4 = option;
+        }
+        else
+        {
+            printf("\nInvalid Input, Try again mate!\n");
+            *i -= 1;
+        }
+    }
+    else if (choice == 5)
+    {
+        if (*cell5 == ' ')
+        {
+            *cell5 = option;
+        }
+        else
+        {
+            printf("\nInvalid Input, Try again mate!\n");
+            *i -= 1;
+        }
+    }
+    else if (choice == 6)
+    {
+        if (*cell6 == ' ')
+        {
+            *cell6 = option;
+        }
+        else
+        {
+            printf("\nInvalid Input, Try again mate!\n");
+            *i -= 1;
+        }
+    }
+    else if (choice == 7)
+    {
+        if (*cell7 == ' ')
+        {
+            *cell7 = option;
+        }
+        else
+        {
+            printf("\nInvalid Input, Try again mate!\n");
+            *i -= 1;
+        }
+    }
+    else if (choice == 8)
+    {
+        if (*cell8 == ' ')
+        {
+            *cell8 = option;
+        }
+        else
+        {
+            printf("\nInvalid Input, Try again mate!\n");
+            *i -= 1;
+        }
+    }
+    else if (choice == 9)
+    {
+        if (*cell9 == ' ')
+        {
+            *cell9 = option;
+        }
+        else
+        {
+            printf("\nInvalid Input, Try again mate!\n");
+            *i -= 1;
+        }
+    }
+    else
+    {
+        printf("\nInvalid Input, Try again mate!\n");
+
+        *i -= 1;
+    }
+}
+
+void checkingWin(char cell1, char cell2, char cell3, char cell4, char cell5, char cell6, char cell7, char cell8, char cell9, int *winner, int choice)
+{
+    if (choice == 1)
+    {
+        if (cell1 == 'X')
+        {
+            *winner = 1;
+        }
+        else
+        {
+            *winner = 2;
+        }
+    }
+    if (choice == 2)
+    {
+        if (cell2 == 'X')
+        {
+            *winner = 1;
+        }
+        else
+        {
+            *winner = 2;
+        }
+    }
+    if (choice == 3)
+    {
+        if (cell3 == 'X')
+        {
+            *winner = 1;
+        }
+        else
+        {
+            *winner = 2;
+        }
+    }
+    if (choice == 4)
+    {
+        if (cell4 == 'X')
+        {
+            *winner = 1;
+        }
+        else
+        {
+            *winner = 2;
+        }
+    }
+    if (choice == 5)
+    {
+        if (cell5 == 'X')
+        {
+            *winner = 1;
+        }
+        else
+        {
+            *winner = 2;
+        }
+    }
+    if (choice == 6)
+    {
+        if (cell6 == 'X')
+        {
+            *winner = 1;
+        }
+        else
+        {
+            *winner = 2;
+        }
+    }
+    if (choice == 7)
+    {
+        if (cell7 == 'X')
+        {
+            *winner = 1;
+        }
+        else
+        {
+            *winner = 2;
+        }
+    }
+    if (choice == 8)
+    {
+        if (cell8 == 'X')
+        {
+            *winner = 1;
+        }
+        else
+        {
+            *winner = 2;
+        }
+    }
+    if (choice == 9)
+    {
+        if (cell9 == 'X')
+        {
+            *winner = 1;
+        }
+        else
+        {
+            *winner = 2;
+        }
+    }
+}
+
 int main()
 {
 
@@ -174,240 +393,14 @@ int main()
                     printf("player-1(X) turn - ");
                     scanf("%d", &choice);
 
-                    if (choice == 1)
-                    {
-                        if (cell1 == ' ')
-                        {
-                            cell1 = 'X';
-                        }
-                        else
-                        {
-                            printf("\nInvalid Input, Try again mate!\n");
-                            i--;
-                        }
-                    }
-                    else if (choice == 2)
-                    {
-                        if (cell2 == ' ')
-                        {
-                            cell2 = 'X';
-                        }
-                        else
-                        {
-                            printf("\nInvalid Input, Try again mate!\n");
-                            i--;
-                        }
-                    }
-                    else if (choice == 3)
-                    {
-                        if (cell3 == ' ')
-                        {
-                            cell3 = 'X';
-                        }
-                        else
-                        {
-                            printf("\nInvalid Input, Try again mate!\n");
-                            i--;
-                        }
-                    }
-                    else if (choice == 4)
-                    {
-                        if (cell4 == ' ')
-                        {
-                            cell4 = 'X';
-                        }
-                        else
-                        {
-                            printf("\nInvalid Input, Try again mate!\n");
-                            i--;
-                        }
-                    }
-                    else if (choice == 5)
-                    {
-                        if (cell5 == ' ')
-                        {
-                            cell5 = 'X';
-                        }
-                        else
-                        {
-                            printf("\nInvalid Input, Try again mate!\n");
-                            i--;
-                        }
-                    }
-                    else if (choice == 6)
-                    {
-                        if (cell6 == ' ')
-                        {
-                            cell6 = 'X';
-                        }
-                        else
-                        {
-                            printf("\nInvalid Input, Try again mate!\n");
-                            i--;
-                        }
-                    }
-                    else if (choice == 7)
-                    {
-                        if (cell7 == ' ')
-                        {
-                            cell7 = 'X';
-                        }
-                        else
-                        {
-                            printf("\nInvalid Input, Try again mate!\n");
-                            i--;
-                        }
-                    }
-                    else if (choice == 8)
-                    {
-                        if (cell8 == ' ')
-                        {
-                            cell8 = 'X';
-                        }
-                        else
-                        {
-                            printf("\nInvalid Input, Try again mate!\n");
-                            i--;
-                        }
-                    }
-                    else if (choice == 9)
-                    {
-                        if (cell9 == ' ')
-                        {
-                            cell9 = 'X';
-                        }
-                        else
-                        {
-                            printf("\nInvalid Input, Try again mate!\n");
-                            i--;
-                        }
-                    }
-                    else
-                    {
-                        printf("\nInvalid Input, Try again mate!\n");
-
-                        i--;
-                    }
+                    givingChoice('X', choice, &cell1, &cell2, &cell3, &cell4, &cell5, &cell6, &cell7, &cell8, &cell9, &i);
                 }
                 else
                 {
                     printf("player-2(O) turn - ");
                     scanf("%d", &choice);
 
-                    if (choice == 1)
-                    {
-                        if (cell1 == ' ')
-                        {
-                            cell1 = 'O';
-                        }
-                        else
-                        {
-                            printf("\nInvalid Input, Try again mate!\n");
-                            i--;
-                        }
-                    }
-                    else if (choice == 2)
-                    {
-                        if (cell2 == ' ')
-                        {
-                            cell2 = 'O';
-                        }
-                        else
-                        {
-                            printf("\nInvalid Input, Try again mate!\n");
-                            i--;
-                        }
-                    }
-                    else if (choice == 3)
-                    {
-                        if (cell3 == ' ')
-                        {
-                            cell3 = 'O';
-                        }
-                        else
-                        {
-                            printf("\nInvalid Input, Try again mate!\n");
-                            i--;
-                        }
-                    }
-                    else if (choice == 4)
-                    {
-                        if (cell4 == ' ')
-                        {
-                            cell4 = 'O';
-                        }
-                        else
-                        {
-                            printf("\nInvalid Input, Try again mate!\n");
-                            i--;
-                        }
-                    }
-                    else if (choice == 5)
-                    {
-                        if (cell5 == ' ')
-                        {
-                            cell5 = 'O';
-                        }
-                        else
-                        {
-                            printf("\nInvalid Input, Try again mate!\n");
-                            i--;
-                        }
-                    }
-                    else if (choice == 6)
-                    {
-                        if (cell6 == ' ')
-                        {
-                            cell6 = 'O';
-                        }
-                        else
-                        {
-                            printf("\nInvalid Input, Try again mate!\n");
-                            i--;
-                        }
-                    }
-                    else if (choice == 7)
-                    {
-                        if (cell7 == ' ')
-                        {
-                            cell7 = 'O';
-                        }
-                        else
-                        {
-                            printf("\nInvalid Input, Try again mate!\n");
-                            i--;
-                        }
-                    }
-                    else if (choice == 8)
-                    {
-                        if (cell8 == ' ')
-                        {
-                            cell8 = 'O';
-                        }
-                        else
-                        {
-                            printf("\nInvalid Input, Try again mate!\n");
-                            i--;
-                        }
-                    }
-                    else if (choice == 9)
-                    {
-                        if (cell9 == ' ')
-                        {
-                            cell9 = 'O';
-                        }
-                        else
-                        {
-                            printf("\nInvalid Input, Try again mate!\n");
-                            i--;
-                        }
-                    }
-                    else
-                    {
-                        printf("\nInvalid Input, Try again mate!\n");
-
-                        i--;
-                    }
+                    givingChoice('O', choice, &cell1, &cell2, &cell3, &cell4, &cell5, &cell6, &cell7, &cell8, &cell9, &i);
                 }
 
                 // The interface
@@ -418,116 +411,7 @@ int main()
 
                 if ((cell1 == cell2 && cell1 == cell3 && cell1 != ' ') || (cell4 == cell5 && cell4 == cell6 && cell4 != ' ') || (cell7 == cell8 && cell7 == cell9 && cell7 != ' ') || (cell1 == cell4 && cell1 == cell7 && cell1 != ' ') || (cell2 == cell5 && cell2 == cell8 && cell2 != ' ') || (cell3 == cell6 && cell3 == cell9 && cell3 != ' ') || (cell1 == cell5 && cell1 == cell9 && cell1 != ' ') || (cell3 == cell5 && cell3 == cell7 && cell3 != ' '))
                 {
-                    if (choice == 1)
-                    {
-                        if (cell1 == 'X')
-                        {
-                            winner = 1;
-                        }
-                        else
-                        {
-                            winner = 2;
-                        }
-                    }
-                    if (choice == 2)
-                    {
-                        if (cell2 == 'X')
-                        {
-                            winner = 1;
-                        }
-                        else
-                        {
-                            winner = 2;
-                        }
-                    }
-                    if (choice == 3)
-                    {
-                        if (cell3 == 'X')
-                        {
-                            winner = 1;
-                        }
-                        else
-                        {
-                            winner = 2;
-                        }
-                    }
-                    if (choice == 3)
-                    {
-                        if (cell3 == 'X')
-                        {
-                            winner = 1;
-                        }
-                        else
-                        {
-                            winner = 2;
-                        }
-                    }
-                    if (choice == 4)
-                    {
-                        if (cell4 == 'X')
-                        {
-                            winner = 1;
-                        }
-                        else
-                        {
-                            winner = 2;
-                        }
-                    }
-                    if (choice == 5)
-                    {
-                        if (cell5 == 'X')
-                        {
-                            winner = 1;
-                        }
-                        else
-                        {
-                            winner = 2;
-                        }
-                    }
-                    if (choice == 6)
-                    {
-                        if (cell6 == 'X')
-                        {
-                            winner = 1;
-                        }
-                        else
-                        {
-                            winner = 2;
-                        }
-                    }
-                    if (choice == 7)
-                    {
-                        if (cell7 == 'X')
-                        {
-                            winner = 1;
-                        }
-                        else
-                        {
-                            winner = 2;
-                        }
-                    }
-                    if (choice == 8)
-                    {
-                        if (cell8 == 'X')
-                        {
-                            winner = 1;
-                        }
-                        else
-                        {
-                            winner = 2;
-                        }
-                    }
-                    if (choice == 9)
-                    {
-                        if (cell9 == 'X')
-                        {
-                            winner = 1;
-                        }
-                        else
-                        {
-                            winner = 2;
-                        }
-                    }
+                    checkingWin(cell1, cell2, cell3, cell4, cell5, cell6, cell7, cell8, cell9, &winner, choice);
 
                     draw = 0;
 
@@ -576,75 +460,7 @@ int main()
                     choice = findChoice(cell1, cell2, cell3, cell4, cell5, cell6, cell7, cell8, cell9);
                     printf("Computer's(X) turn - %d \n", choice);
 
-                    if (choice == 1)
-                    {
-                        if (cell1 == ' ')
-                        {
-                            cell1 = 'X';
-                        }
-                    }
-                    else if (choice == 2)
-                    {
-                        if (cell2 == ' ')
-                        {
-                            cell2 = 'X';
-                        }
-                    }
-                    else if (choice == 3)
-                    {
-                        if (cell3 == ' ')
-                        {
-                            cell3 = 'X';
-                        }
-                    }
-                    else if (choice == 4)
-                    {
-                        if (cell4 == ' ')
-                        {
-                            cell4 = 'X';
-                        }
-                    }
-                    else if (choice == 5)
-                    {
-                        if (cell5 == ' ')
-                        {
-                            cell5 = 'X';
-                        }
-                    }
-                    else if (choice == 6)
-                    {
-                        if (cell6 == ' ')
-                        {
-                            cell6 = 'X';
-                        }
-                    }
-                    else if (choice == 7)
-                    {
-                        if (cell7 == ' ')
-                        {
-                            cell7 = 'X';
-                        }
-                    }
-                    else if (choice == 8)
-                    {
-                        if (cell8 == ' ')
-                        {
-                            cell8 = 'X';
-                        }
-                    }
-                    else if (choice == 9)
-                    {
-                        if (cell9 == ' ')
-                        {
-                            cell9 = 'X';
-                        }
-                    }
-                    else
-                    {
-                        printf("\nInvalid Input, Try again mate!\n");
-
-                        return 0;
-                    }
+                    givingChoice('X', choice, &cell1, &cell2, &cell3, &cell4, &cell5, &cell6, &cell7, &cell8, &cell9, &i);
                 }
                 else
                 {
@@ -652,120 +468,7 @@ int main()
                     printf("Your turn(O) - ");
                     scanf("%d", &choice);
 
-                    if (choice == 1)
-                    {
-                        if (cell1 == ' ')
-                        {
-                            cell1 = 'O';
-                        }
-                        else
-                        {
-                            printf("\nInvalid Input, Try again mate!\n");
-                            i--;
-                        }
-                    }
-                    else if (choice == 2)
-                    {
-                        if (cell2 == ' ')
-                        {
-                            cell2 = 'O';
-                        }
-                        else
-                        {
-                            printf("\nInvalid Input, Try again mate!\n");
-                            i--;
-                        }
-                    }
-                    else if (choice == 3)
-                    {
-                        if (cell3 == ' ')
-                        {
-                            cell3 = 'O';
-                        }
-                        else
-                        {
-                            printf("\nInvalid Input, Try again mate!\n");
-                            i--;
-                        }
-                    }
-                    else if (choice == 4)
-                    {
-                        if (cell4 == ' ')
-                        {
-                            cell4 = 'O';
-                        }
-                        else
-                        {
-                            printf("\nInvalid Input, Try again mate!\n");
-                            i--;
-                        }
-                    }
-                    else if (choice == 5)
-                    {
-                        if (cell5 == ' ')
-                        {
-                            cell5 = 'O';
-                        }
-                        else
-                        {
-                            printf("\nInvalid Input, Try again mate!\n");
-                            i--;
-                        }
-                    }
-                    else if (choice == 6)
-                    {
-                        if (cell6 == ' ')
-                        {
-                            cell6 = 'O';
-                        }
-                        else
-                        {
-                            printf("\nInvalid Input, Try again mate!\n");
-                            i--;
-                        }
-                    }
-                    else if (choice == 7)
-                    {
-                        if (cell7 == ' ')
-                        {
-                            cell7 = 'O';
-                        }
-                        else
-                        {
-                            printf("\nInvalid Input, Try again mate!\n");
-                            i--;
-                        }
-                    }
-                    else if (choice == 8)
-                    {
-                        if (cell8 == ' ')
-                        {
-                            cell8 = 'O';
-                        }
-                        else
-                        {
-                            printf("\nInvalid Input, Try again mate!\n");
-                            i--;
-                        }
-                    }
-                    else if (choice == 9)
-                    {
-                        if (cell9 == ' ')
-                        {
-                            cell9 = 'O';
-                        }
-                        else
-                        {
-                            printf("\nInvalid Input, Try again mate!\n");
-                            i--;
-                        }
-                    }
-                    else
-                    {
-                        printf("\nInvalid Input, Try again mate!\n");
-
-                        return 0;
-                    }
+                    givingChoice('O', choice, &cell1, &cell2, &cell3, &cell4, &cell5, &cell6, &cell7, &cell8, &cell9, &i);
                 }
 
                 // The interface
@@ -776,106 +479,7 @@ int main()
 
                 if ((cell1 == cell2 && cell1 == cell3 && cell1 != ' ') || (cell4 == cell5 && cell4 == cell6 && cell4 != ' ') || (cell7 == cell8 && cell7 == cell9 && cell7 != ' ') || (cell1 == cell4 && cell1 == cell7 && cell1 != ' ') || (cell2 == cell5 && cell2 == cell8 && cell2 != ' ') || (cell3 == cell6 && cell3 == cell9 && cell3 != ' ') || (cell1 == cell5 && cell1 == cell9 && cell1 != ' ') || (cell3 == cell5 && cell3 == cell7 && cell3 != ' '))
                 {
-                    if (choice == 1)
-                    {
-                        if (cell1 == 'X')
-                        {
-                            winner = 1;
-                        }
-                        else
-                        {
-                            winner = 2;
-                        }
-                    }
-                    if (choice == 2)
-                    {
-                        if (cell2 == 'X')
-                        {
-                            winner = 1;
-                        }
-                        else
-                        {
-                            winner = 2;
-                        }
-                    }
-                    if (choice == 3)
-                    {
-                        if (cell3 == 'X')
-                        {
-                            winner = 1;
-                        }
-                        else
-                        {
-                            winner = 2;
-                        }
-                    }
-                    if (choice == 4)
-                    {
-                        if (cell4 == 'X')
-                        {
-                            winner = 1;
-                        }
-                        else
-                        {
-                            winner = 2;
-                        }
-                    }
-                    if (choice == 5)
-                    {
-                        if (cell5 == 'X')
-                        {
-                            winner = 1;
-                        }
-                        else
-                        {
-                            winner = 2;
-                        }
-                    }
-                    if (choice == 6)
-                    {
-                        if (cell6 == 'X')
-                        {
-                            winner = 1;
-                        }
-                        else
-                        {
-                            winner = 2;
-                        }
-                    }
-                    if (choice == 7)
-                    {
-                        if (cell7 == 'X')
-                        {
-                            winner = 1;
-                        }
-                        else
-                        {
-                            winner = 2;
-                        }
-                    }
-                    if (choice == 8)
-                    {
-                        if (cell8 == 'X')
-                        {
-                            winner = 1;
-                        }
-                        else
-                        {
-                            winner = 2;
-                        }
-                    }
-                    if (choice == 9)
-                    {
-                        if (cell9 == 'X')
-                        {
-                            winner = 1;
-                        }
-                        else
-                        {
-                            winner = 2;
-                        }
-                    }
-
+                    checkingWin(cell1, cell2, cell3, cell4, cell5, cell6, cell7, cell8, cell9, &winner, choice);
                     draw = 0;
 
                     if (winner == 1)
