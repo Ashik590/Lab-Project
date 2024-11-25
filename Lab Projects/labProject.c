@@ -1,149 +1,190 @@
 #include <stdio.h>
 
-// Function that by Computer chooses to play
-int findChoice(int cell1, int cell2, int cell3, int cell4, int cell5, int cell6, int cell7, int cell8, int cell9)
+// Function that by AI chooses to play
+int findChoiceByPC(int cell1, int cell2, int cell3, int cell4, int cell5, int cell6, int cell7, int cell8, int cell9)
 {
     int choice;
-
-    if (cell1 == cell2 && cell1 != ' ' && cell3 == ' ')
-    {
+    // First training phase
+    if (cell1 == cell2 && cell1 == 'X' && cell3 == ' ')
         choice = 3;
-    }
-    else if (cell1 == cell4 && cell1 != ' ' && cell7 == ' ')
-    {
+    else if (cell1 == cell4 && cell1 == 'X' && cell7 == ' ')
         choice = 7;
-    }
-    else if (cell1 == cell5 && cell1 != ' ' && cell9 == ' ')
-    {
+    else if (cell1 == cell5 && cell1 == 'X' && cell9 == ' ')
         choice = 9;
-    }
-    else if (cell3 == cell6 && cell3 != ' ' && cell9 == ' ')
-    {
+    else if (cell2 == cell5 && cell2 == 'X' && cell8 == ' ')
+        choice = 8;
+    else if (cell2 == cell3 && cell2 == 'X' && cell1 == ' ')
+        choice = 1;
+    else if (cell3 == cell6 && cell3 == 'X' && cell9 == ' ')
         choice = 9;
-    }
-    else if (cell4 == cell5 && cell4 != ' ' && cell6 == ' ')
-    {
+    else if (cell3 == cell5 && cell3 == 'X' && cell7 == ' ')
+        choice = 7;
+    else if (cell4 == cell5 && cell4 == 'X' && cell6 == ' ')
         choice = 6;
-    }
-    else if (cell7 == cell8 && cell7 != ' ' && cell9 == ' ')
-    {
-        choice = 9;
-    }
-    else if (cell2 == cell5 && cell2 != ' ' && cell8 == ' ')
-    {
-        choice = 8;
-    }
-    else if (cell3 == cell5 && cell3 != ' ' && cell7 == ' ')
-    {
-        choice = 7;
-    }
-    else if (cell1 == cell3 && cell1 != ' ' && cell2 == ' ')
-    {
-        choice = 2;
-    }
-    else if (cell4 == cell6 && cell4 != ' ' && cell5 == ' ')
-    {
-        choice = 5;
-    }
-    else if (cell7 == cell9 && cell7 != ' ' && cell8 == ' ')
-    {
-        choice = 8;
-    }
-    else if (cell1 == cell9 && cell1 != ' ' && cell5 == ' ')
-    {
-        choice = 5;
-    }
-    else if (cell3 == cell7 && cell3 != ' ' && cell5 == ' ')
-    {
-        choice = 5;
-    }
-    else if (cell1 == cell7 && cell1 != ' ' && cell4 == ' ')
-    {
+    else if (cell4 == cell7 && cell4 == 'X' && cell1 == ' ')
+        choice = 1;
+    else if (cell5 == cell6 && cell5 == 'X' && cell4 == ' ')
         choice = 4;
-    }
-    else if (cell2 == cell8 && cell2 != ' ' && cell5 == ' ')
-    {
+    else if (cell5 == cell9 && cell5 == 'X' && cell1 == ' ')
+        choice = 1;
+    else if (cell5 == cell8 && cell5 == 'X' && cell2 == ' ')
+        choice = 2;
+    else if (cell5 == cell7 && cell5 == 'X' && cell3 == ' ')
+        choice = 3;
+    else if (cell6 == cell9 && cell6 == 'X' && cell3 == ' ')
+        choice = 3;
+    else if (cell7 == cell8 && cell7 == 'X' && cell9 == ' ')
+        choice = 9;
+    else if (cell8 == cell9 && cell8 == 'X' && cell7 == ' ')
+        choice = 7;
+
+    else if (cell1 == cell3 && cell1 == 'X' && cell2 == ' ')
+        choice = 2;
+    else if (cell7 == cell9 && cell7 == 'X' && cell8 == ' ')
+        choice = 8;
+    else if (cell1 == cell9 && cell1 == 'X' && cell5 == ' ')
         choice = 5;
-    }
-    else if (cell3 == cell9 && cell3 != ' ' && cell6 == ' ')
-    {
+    else if (cell3 == cell7 && cell3 == 'X' && cell5 == ' ')
+        choice = 5;
+    else if (cell1 == cell7 && cell1 == 'X' && cell4 == ' ')
+        choice = 4;
+    else if (cell2 == cell8 && cell2 == 'X' && cell5 == ' ')
+        choice = 5;
+    else if (cell3 == cell9 && cell3 == 'X' && cell6 == ' ')
         choice = 6;
-    }
+    else if (cell4 == cell6 && cell4 == 'X' && cell5 == ' ')
+        choice = 5;
+
+    // Second Training phase
+    else if (cell1 == cell2 && cell1 == 'O' && cell3 == ' ')
+        choice = 3;
+    else if (cell1 == cell4 && cell1 == 'O' && cell7 == ' ')
+        choice = 7;
+    else if (cell1 == cell5 && cell1 == 'O' && cell9 == ' ')
+        choice = 9;
+    else if (cell2 == cell5 && cell2 == 'O' && cell8 == ' ')
+        choice = 8;
+    else if (cell2 == cell3 && cell2 == 'O' && cell1 == ' ')
+        choice = 1;
+    else if (cell3 == cell6 && cell3 == 'O' && cell9 == ' ')
+        choice = 9;
+    else if (cell3 == cell5 && cell3 == 'O' && cell7 == ' ')
+        choice = 7;
+    else if (cell4 == cell5 && cell4 == 'O' && cell6 == ' ')
+        choice = 6;
+    else if (cell4 == cell7 && cell4 == 'O' && cell1 == ' ')
+        choice = 1;
+    else if (cell5 == cell6 && cell5 == 'O' && cell4 == ' ')
+        choice = 4;
+    else if (cell5 == cell9 && cell5 == 'O' && cell1 == ' ')
+        choice = 1;
+    else if (cell5 == cell8 && cell5 == 'O' && cell2 == ' ')
+        choice = 2;
+    else if (cell5 == cell7 && cell5 == 'O' && cell3 == ' ')
+        choice = 3;
+    else if (cell6 == cell9 && cell6 == 'O' && cell3 == ' ')
+        choice = 3;
+    else if (cell7 == cell8 && cell7 == 'O' && cell9 == ' ')
+        choice = 9;
+    else if (cell8 == cell9 && cell8 == 'O' && cell7 == ' ')
+        choice = 7;
+
+    else if (cell1 == cell3 && cell1 == 'O' && cell2 == ' ')
+        choice = 2;
+    else if (cell7 == cell9 && cell7 == 'O' && cell8 == ' ')
+        choice = 8;
+    else if (cell1 == cell9 && cell1 == 'O' && cell5 == ' ')
+        choice = 5;
+    else if (cell3 == cell7 && cell3 == 'O' && cell5 == ' ')
+        choice = 5;
+    else if (cell1 == cell7 && cell1 == 'O' && cell4 == ' ')
+        choice = 4;
+    else if (cell2 == cell8 && cell2 == 'O' && cell5 == ' ')
+        choice = 5;
+    else if (cell3 == cell9 && cell3 == 'O' && cell6 == ' ')
+        choice = 6;
+    else if (cell4 == cell6 && cell4 == 'O' && cell5 == ' ')
+        choice = 5;
+
+    // Third training phase
+    else if ((cell1 == 'X' /*AI is X*/ && cell2 == ' ' && cell3 == ' ') || (cell3 == 'X' /*AI is X*/ && cell2 == ' ' && cell1 == ' '))
+        choice = 2;
+    else if ((cell1 == 'X' /*AI is X*/ && cell5 == ' ' && cell9 == ' ') || (cell2 == 'X' /*AI is X*/ && cell5 == ' ' && cell8 == ' ') || (cell3 == 'X' /*AI is X*/ && cell5 == ' ' && cell7 == ' '))
+        choice = 5;
+    else if (cell1 == 'X' /*AI is X*/ && cell4 == ' ' && cell7 == ' ')
+        choice = 4;
+    else if (cell2 == 'X' /*AI is X*/ && cell1 == ' ' && cell3 == ' ')
+        choice = 1;
+    else if (cell3 == 'X' /*AI is X*/ && cell6 == ' ' && cell9 == ' ')
+        choice = 6;
+    else if (cell4 == 'X' /*AI is X*/ && cell1 == ' ' && cell7 == ' ')
+        choice = 1;
+    else if (cell4 == 'X' /*AI is X*/ && cell5 == ' ' && cell6 == ' ')
+        choice = 5;
+    else if (cell5 == 'X' /*AI is X*/ && cell4 == ' ' && cell6 == ' ')
+        choice = 4;
+    else if (cell5 == 'X' /*AI is X*/ && cell1 == ' ' && cell9 == ' ')
+        choice = 1;
+    else if (cell5 == 'X' /*AI is X*/ && cell3 == ' ' && cell7 == ' ')
+        choice = 3;
+    else if (cell5 == 'X' /*AI is X*/ && cell2 == ' ' && cell8 == ' ')
+        choice = 2;
+    else if (cell6 == 'X' /*AI is X*/ && cell5 == ' ' && cell4 == ' ')
+        choice = 5;
+    else if (cell6 == 'X' /*AI is X*/ && cell3 == ' ' && cell9 == ' ')
+        choice = 3;
+    else if (cell7 == 'X' /*AI is X*/ && cell8 == ' ' && cell9 == ' ')
+        choice = 8;
+    else if (cell7 == 'X' /*AI is X*/ && cell4 == ' ' && cell1 == ' ')
+        choice = 4;
+    else if (cell7 == 'X' /*AI is X*/ && cell5 == ' ' && cell3 == ' ')
+        choice = 5;
+    else if (cell8 == 'X' /*AI is X*/ && cell5 == ' ' && cell2 == ' ')
+        choice = 5;
+    else if (cell8 == 'X' /*AI is X*/ && cell7 == ' ' && cell9 == ' ')
+        choice = 7;
+    else if (cell9 == 'X' /*AI is X*/ && cell8 == ' ' && cell7 == ' ')
+        choice = 8;
+    else if (cell9 == 'X' /*AI is X*/ && cell6 == ' ' && cell3 == ' ')
+        choice = 6;
+    else if (cell9 == 'X' /*AI is X*/ && cell5 == ' ' && cell1 == ' ')
+        choice = 5;
     else
     {
         if (cell1 == ' ')
-        {
             choice = 1;
-        }
         else if (cell2 == ' ')
-        {
             choice = 2;
-        }
         else if (cell3 == ' ')
-        {
             choice = 3;
-        }
         else if (cell4 == ' ')
-        {
             choice = 4;
-        }
         else if (cell5 == ' ')
-        {
             choice = 5;
-        }
         else if (cell6 == ' ')
-        {
             choice = 6;
-        }
         else if (cell7 == ' ')
-        {
             choice = 7;
-        }
         else if (cell8 == ' ')
-        {
             choice = 8;
-        }
         else if (cell9 == ' ')
-        {
             choice = 9;
-        }
     }
-
     return choice;
 }
 
 void printingInterface(char cell1, char cell2, char cell3, char cell4, char cell5, char cell6, char cell7, char cell8, char cell9)
 {
-    printf("\n %c ", cell1);
-    printf("| ");
-
-    printf("%c ", cell2);
-    printf("| ");
-    printf("%c ", cell3);
-    printf("\n");
-    printf("-----------\n");
-    printf(" %c ", cell4);
-    printf("| ");
-
-    printf("%c ", cell5);
-    printf("| ");
-
-    printf("%c ", cell6);
-
-    printf("\n");
-    printf("-----------\n");
-    printf(" %c ", cell7);
-    printf("| ");
-
-    printf("%c ", cell8);
-    printf("| ");
-
-    printf("%c ", cell9);
+    printf("\n %c | %c | %c ", cell1, cell2, cell3);
+    printf("\n---|---|---\n");
+    printf(" %c | %c | %c ", cell4, cell5, cell6);
+    printf("\n---|---|---\n");
+    printf(" %c | %c | %c ", cell7, cell8, cell9);
 
     printf("\n\n");
 }
 
-void givingChoice(char option, int choice, char *cell1, char *cell2, char *cell3, char *cell4, char *cell5, char *cell6, char *cell7, char *cell8, char *cell9, int *i)
+void makingMove(char option, char choice, char *cell1, char *cell2, char *cell3, char *cell4, char *cell5, char *cell6, char *cell7, char *cell8, char *cell9, int *i)
 {
     if (choice == 1)
     {
@@ -261,146 +302,118 @@ void givingChoice(char option, int choice, char *cell1, char *cell2, char *cell3
     }
 }
 
-void checkingWin(char cell1, char cell2, char cell3, char cell4, char cell5, char cell6, char cell7, char cell8, char cell9, int *winner, int choice)
+void checkingWin(char cell1, char cell2, char cell3, char cell4, char cell5, char cell6, char cell7, char cell8, char cell9, int *winner, char choice)
 {
     if (choice == 1)
     {
         if (cell1 == 'X')
-        {
             *winner = 1;
-        }
         else
-        {
             *winner = 2;
-        }
     }
     if (choice == 2)
     {
         if (cell2 == 'X')
-        {
             *winner = 1;
-        }
         else
-        {
             *winner = 2;
-        }
     }
     if (choice == 3)
     {
         if (cell3 == 'X')
-        {
             *winner = 1;
-        }
         else
-        {
             *winner = 2;
-        }
     }
     if (choice == 4)
     {
         if (cell4 == 'X')
-        {
             *winner = 1;
-        }
         else
-        {
             *winner = 2;
-        }
     }
     if (choice == 5)
     {
         if (cell5 == 'X')
-        {
             *winner = 1;
-        }
         else
-        {
             *winner = 2;
-        }
     }
     if (choice == 6)
     {
         if (cell6 == 'X')
-        {
             *winner = 1;
-        }
         else
-        {
             *winner = 2;
-        }
     }
     if (choice == 7)
     {
         if (cell7 == 'X')
-        {
             *winner = 1;
-        }
         else
-        {
             *winner = 2;
-        }
     }
     if (choice == 8)
     {
         if (cell8 == 'X')
-        {
             *winner = 1;
-        }
         else
-        {
             *winner = 2;
-        }
     }
     if (choice == 9)
     {
         if (cell9 == 'X')
-        {
             *winner = 1;
-        }
         else
-        {
             *winner = 2;
-        }
     }
 }
 
 int main()
 {
-
     while (1)
     {
-
         char cell1 = ' ', cell2 = ' ', cell3 = ' ', cell4 = ' ', cell5 = ' ', cell6 = ' ', cell7 = ' ', cell8 = ' ', cell9 = ' ';
 
-        printf("\nWant to play multiplayer or with the Computer?\n1 : Multiplayer\n2 : With the Computer\n=> ");
-
+        printf("\nWant to play multiplayer or with the AI?\n1 : Multiplayer\n2 : With the AI\n=> ");
+        int escape = 0;
+        int draw = 1;
         int gameMode;
         scanf("%d", &gameMode);
 
         if (gameMode == 1 /*Multiplayer mode*/)
         {
-            int draw = 1;
             printf("\nStarting Multiplayer Tic Tac Toe\n");
             // The interface
             printingInterface(cell1, cell2, cell3, cell4, cell5, cell6, cell7, cell8, cell9);
 
             for (int i = 1; i <= 9; i++)
             {
-                int choice;
-
+                char choice;
                 if (i % 2 != 0)
                 {
                     printf("player-1(X) turn - ");
-                    scanf("%d", &choice);
-
-                    givingChoice('X', choice, &cell1, &cell2, &cell3, &cell4, &cell5, &cell6, &cell7, &cell8, &cell9, &i);
+                    scanf(" %c", &choice);
+                    if (choice == 81)
+                    {
+                        escape = 1;
+                        printf("\nEscaping from battle doesn't make you a man!\nGood Bye!\n\n");
+                        break;
+                    }
+                    makingMove('X', choice - 48, &cell1, &cell2, &cell3, &cell4, &cell5, &cell6, &cell7, &cell8, &cell9, &i);
                 }
                 else
                 {
                     printf("player-2(O) turn - ");
-                    scanf("%d", &choice);
+                    scanf(" %c", &choice);
+                    if (choice == 81)
+                    {
+                        escape = 1;
+                        printf("\nEscaping from battle doesn't make you a man!\nGood Bye!\n\n");
+                        break;
+                    }
 
-                    givingChoice('O', choice, &cell1, &cell2, &cell3, &cell4, &cell5, &cell6, &cell7, &cell8, &cell9, &i);
+                    makingMove('O', choice - 48, &cell1, &cell2, &cell3, &cell4, &cell5, &cell6, &cell7, &cell8, &cell9, &i);
                 }
 
                 // The interface
@@ -408,30 +421,22 @@ int main()
 
                 // check if there is win
                 int winner;
-
                 if ((cell1 == cell2 && cell1 == cell3 && cell1 != ' ') || (cell4 == cell5 && cell4 == cell6 && cell4 != ' ') || (cell7 == cell8 && cell7 == cell9 && cell7 != ' ') || (cell1 == cell4 && cell1 == cell7 && cell1 != ' ') || (cell2 == cell5 && cell2 == cell8 && cell2 != ' ') || (cell3 == cell6 && cell3 == cell9 && cell3 != ' ') || (cell1 == cell5 && cell1 == cell9 && cell1 != ' ') || (cell3 == cell5 && cell3 == cell7 && cell3 != ' '))
                 {
-                    checkingWin(cell1, cell2, cell3, cell4, cell5, cell6, cell7, cell8, cell9, &winner, choice);
-
+                    checkingWin(cell1, cell2, cell3, cell4, cell5, cell6, cell7, cell8, cell9, &winner, choice - 48);
                     draw = 0;
-
                     if (winner == 1)
-                    {
                         printf("Bravo! Player-1(X) is the winner.");
-                    }
                     else if (winner == 2)
-                    {
                         printf("Bravo! Player-2(O) is the winner.");
-                    }
-
                     break;
                 }
             }
 
-            if (draw)
-            {
+            if (escape == 1)
+                break;
+            else if (draw)
                 printf("The match is tied. It was a Bone to Bone fight!\n\n");
-            }
 
             // Whether want to play again or not
             char replay;
@@ -443,34 +448,62 @@ int main()
                 printf("\nThanks for playing my game, mate!\n");
                 break;
             }
+            else if (replay == 'Y')
+                continue;
+            else
+                printf("\nInvalid Input. Assuming you're willing to play again.\n");
         }
         else if (gameMode == 2 /*Playing with AI*/)
         {
-            printf("\nStarting Tic Tac Toe playing with The Computer\n");
+            printf("\nStarting Tic Tac Toe playing with a Powerful AI\n\nYou want to move first? Or let the AI move first?\n1. Me(O) first\n2. AI(X) first\n=> ");
+            int firstPlayer;
+            scanf("%d", &firstPlayer);
+            int iteration;
 
-            int draw = 1;
-
-            for (int i = 1; i <= 9; i++)
+            while (1)
             {
-                int choice;
+                if (firstPlayer == 1)
+                {
+                    iteration = 0;
+                    break;
+                }
+                else if (firstPlayer == 2)
+                {
+                    iteration = 1;
+                    break;
+                }
+                else
+                    printf("\nInvalid Input, Try again\n");
+            }
+            printingInterface(cell1, cell2, cell3, cell4, cell5, cell6, cell7, cell8, cell9);
+            int lastIteration = iteration + 8;
 
+            for (int i = iteration; i <= lastIteration; i++)
+            {
+                char choice;
                 if (i % 2 != 0)
                 {
                     // computer's turn
-                    choice = findChoice(cell1, cell2, cell3, cell4, cell5, cell6, cell7, cell8, cell9);
-                    printf("Computer's(X) turn - %d \n", choice);
+                    int pcChoice;
+                    pcChoice = findChoiceByPC(cell1, cell2, cell3, cell4, cell5, cell6, cell7, cell8, cell9);
+                    printf("Computer's(X) turn - %d \n", pcChoice);
+                    choice = pcChoice + 48;
 
-                    givingChoice('X', choice, &cell1, &cell2, &cell3, &cell4, &cell5, &cell6, &cell7, &cell8, &cell9, &i);
+                    makingMove('X', pcChoice, &cell1, &cell2, &cell3, &cell4, &cell5, &cell6, &cell7, &cell8, &cell9, &i);
                 }
                 else
                 {
                     // My Turn(O)
                     printf("Your turn(O) - ");
-                    scanf("%d", &choice);
-
-                    givingChoice('O', choice, &cell1, &cell2, &cell3, &cell4, &cell5, &cell6, &cell7, &cell8, &cell9, &i);
+                    scanf(" %c", &choice);
+                    if (choice == 81)
+                    {
+                        escape = 1;
+                        printf("\nEscaping from battle doesn't make you a man!\nGood Bye!\n\n");
+                        break;
+                    }
+                    makingMove('O', choice - 48, &cell1, &cell2, &cell3, &cell4, &cell5, &cell6, &cell7, &cell8, &cell9, &i);
                 }
-
                 // The interface
                 printingInterface(cell1, cell2, cell3, cell4, cell5, cell6, cell7, cell8, cell9);
 
@@ -479,26 +512,21 @@ int main()
 
                 if ((cell1 == cell2 && cell1 == cell3 && cell1 != ' ') || (cell4 == cell5 && cell4 == cell6 && cell4 != ' ') || (cell7 == cell8 && cell7 == cell9 && cell7 != ' ') || (cell1 == cell4 && cell1 == cell7 && cell1 != ' ') || (cell2 == cell5 && cell2 == cell8 && cell2 != ' ') || (cell3 == cell6 && cell3 == cell9 && cell3 != ' ') || (cell1 == cell5 && cell1 == cell9 && cell1 != ' ') || (cell3 == cell5 && cell3 == cell7 && cell3 != ' '))
                 {
-                    checkingWin(cell1, cell2, cell3, cell4, cell5, cell6, cell7, cell8, cell9, &winner, choice);
+                    checkingWin(cell1, cell2, cell3, cell4, cell5, cell6, cell7, cell8, cell9, &winner, choice - 48);
                     draw = 0;
-
                     if (winner == 1)
-                    {
-                        printf("Alas! The Computer defeated you!");
-                    }
+                        printf("Alas! The AI defeated you!");
                     else if (winner == 2)
-                    {
-                        printf("Bravo! You beat the Computer!");
-                    }
+                        printf("Bravo! You beat the AI!");
 
                     break;
                 }
             }
 
-            if (draw)
-            {
-                printf("The match is tied. It was a Bone to Bone fight!\n");
-            }
+            if (escape == 1)
+                break;
+            else if (draw)
+                printf("The match is tied. It was a Bone to Bone fight!\n\n");
 
             // Whether want to play again or not
             char replay;
@@ -510,7 +538,13 @@ int main()
                 printf("\nThanks for playing my game, mate!\n");
                 break;
             }
+            else if (replay == 'Y')
+                continue;
+            else
+                printf("\nInvalid Input. Assuming you're willing to play again.\n");
         }
+        else
+            printf("\nInvalid Input! Shame!\n");
     }
 
     return 0;
