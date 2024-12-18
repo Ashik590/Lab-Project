@@ -386,7 +386,7 @@ int main()
     while (1)
     {
         cell1 = ' ', cell2 = ' ', cell3 = ' ', cell4 = ' ', cell5 = ' ', cell6 = ' ', cell7 = ' ', cell8 = ' ', cell9 = ' ';
-        printf("\nWant to play multiplayer or with the AI?\n1 : Multiplayer\n2 : With the AI\n=> ");
+        printf("\nWant to play multiplayer or with THE UNBEATABLE AI?\n1 : Multiplayer\n2 : With THE UNBEATABLE AI\n=> ");
         int escape = 0;
         int draw = 1;
         char gameMode;
@@ -464,15 +464,17 @@ int main()
             else
                 printf("\nInvalid Input. Assuming you're willing to play again.\n");
         }
-        else if (gameMode - '0' == 2 /*Playing with AI*/)
+        else if (gameMode - '0' == 2 /*Playing with The Beatable AI*/)
         {
-            printf("\nStarting Tic Tac Toe playing with a POWERFUL AI\n\nYou want to move first? Or let the AI move first?\n1. Me(O) first\n2. AI(X) first\n=> ");
-            int firstPlayer;
-            scanf("%d", &firstPlayer);
             int iteration;
-
+            int firstPlayer;
+            char firstPlayerChar;
             while (1)
             {
+                printf("\nStarting Tic Tac Toe playing with a POWERFUL AI\n\nYou want to move first? Or let THE UNBEATABLE AI move first?\n1. Me(O) first\n2. AI(X) first\n=> ");
+                scanf(" %c", &firstPlayerChar);
+                firstPlayer = firstPlayerChar - '0';
+
                 if (firstPlayer == 1)
                 {
                     iteration = 0;
@@ -507,7 +509,7 @@ int main()
                     // My Turn(O)
                     printf("Your turn(O) - ");
                     scanf(" %c", &choice);
-                    if (choice == 81)
+                    if (choice == 81 || choice == 113)
                     {
                         escape = 1;
                         printf("\nEscaping from battle doesn't make you a man!\nGood Bye!\n\n");
